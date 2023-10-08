@@ -23,16 +23,25 @@
     // 🧠 Example of usage:
     // buildPeter() // should return { firstName: "Peter", lastName: "Pan", age: 12 }
     function buildPeter() {
-
+    return {
+      firstName: "Peter",
+      lastName: "Pan",
+      age: 12 }
     }
+    console.log(buildPeter())
 
     // 👉 CHALLENGE 2
     // 🧠 The function buildUser takes three arguments and uses them to build an object and return it.
     // 🧠 Example of usage:
     // buildUser("John", "Smith", 30) // should return { firstName: "John", lastName: "Smith", age: 30 }
     function buildUser(firstName, lastName, age) {
-
+    return {
+     firstName: firstName,
+     lastName: lastName,
+     age: age
     }
+    }
+    console.log(buildUser('Ian','Hyde', 28))
 
     // 👉 CHALLENGE 3
     // 🧠 The function deletePrice takes an object as its argument and deletes its "price" property if it exists.
@@ -42,18 +51,29 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice() {
-
+    let challenge3obj = {
+      item: 'Xbox 360',
+      price: 200
     }
-
+    function deletePrice(obj) {
+      if(obj.price !== undefined) {
+        delete obj.price;
+      } else {
+        obj.priceless = true;
+      }
+      return obj
+    }
+    deletePrice(challenge3obj);
+    console.log(challenge3obj)
     // 👉 CHALLENGE 4
     // 🧠 The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
     // 🧠 Note that the argument of the function is missing, you must write it.
     // 🧠 Examples of usage:
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
+    let chalenge4obj = [1,2]
     function evenList(arr) {
-
+    
     }
 
     // 👉 CHALLENGE 5

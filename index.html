@@ -71,9 +71,13 @@
     // 🧠 Examples of usage:
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
-    let chalenge4obj = [1,2]
-    function evenList(arr) {
     
+    function evenList(arr) {
+    if (arr.length % 2 === 0) {
+      return true;
+    } else {
+      return false;
+    }
     }
 
     // 👉 CHALLENGE 5
@@ -82,9 +86,14 @@
     // 🧠 Examples of usage:
     // firstOrLast(['a', 'b'], true) // should return 'a'
     // firstOrLast(['a', 'b'], false) // should return 'b'
-    function firstOrLast() {
 
+    function firstOrLast(arr, boolean) {
+    if(boolean === true) {
+      return arr[0];
+    } else {
+      return arr[arr.length -1]
     }
+    };
 
     // 👉 CHALLENGE 6
     // 🧠 The function pushElement takes an array as the first argument, and any value we wish as the second.
@@ -92,10 +101,15 @@
     // 🧠 Examples of usage:
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
-    function pushElement() {
-
+    console.log(typeof[])
+    function pushElement(arr, anyValue) {
+        arr[arr.length] = anyValue;
+        console.log(arr.length -1);
+        return arr;
     }
-
+    let challengeArr6 = [1,2,3,4]
+    console.log(pushElement(challengeArr6, 'words'))
+    
     // 👉 CHALLENGE 7
     // 🧠 The function stripX takes a string as its argument.
     // 🧠 The function strips any occurrences of the letter "x" from the string and returns the resulting string.
@@ -108,9 +122,20 @@
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
-    function stripX() {
-
+    function stripX(string) {
+    let splitString7 = string.split('');
+    console.log(splitString7)
+    let result = [];
+    for(let i in splitString7) {
+      if(splitString7[i] !== 'x') {
+      result[result.length] = splitString7[i];
+      }
     }
+    let finalWord7 = result.join('')
+    return finalWord7;
+    };
+    let challengeWord7 = 'exploration';
+    // console.log(stripX(challengeWord7))
 
     // 👉 CHALLENGE 8
     // 🧠 The function stripChar takes a string as its first argument and a character as its second argument.
@@ -121,9 +146,19 @@
     // ❗ Important Notes:
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar() {
-
+    function stripChar(string,evilChar) {
+    let splitString8 = string.split('');
+    let newArr8 = [];
+    for (let i in splitString8) {
+      if(splitString8[i] !== evilChar) {
+        newArr8[newArr8.length] = splitString8[i]
+      }
     }
+    let finalWord8 = newArr8.join('');
+    return finalWord8
+    };
+    let challengeWord8 = 'mississippi' 
+    console.log(stripChar(challengeWord8, 's'))
 
     // 👉 CHALLENGE 9
     // 🧠 The function getProps takes an object as its argument.
@@ -134,9 +169,23 @@
     // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
-    function getProps() {
-
+    function getProps(obj) {
+      let result8 = [];
+        for(let property in obj) {
+          if(property !== 'age' && property !== 'married'){
+            result8[result8.length] = property
+          }
+        }
+        return result8
     }
+    let testObj = {
+      firstName: 'Ian',
+      lastName: 'Hyde',
+      age: 28,
+      married:  true,
+      favFood: 'Pasta'
+    }
+    console.log(getProps(testObj))
 
     // 🧪 TESTS, do not work below this line
     // 🧪 TESTS, do not work below this line
